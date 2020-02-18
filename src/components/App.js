@@ -12,10 +12,10 @@ export default class App extends Component {
     bad: 0
   };
 
-  handleIncrement = ({ target }) => {
+  handleIncrement = ( target ) => {
     this.setState(prevState => {
       return {
-        [target.name]: prevState[target.name] + 1
+        [target]: prevState[target] + 1
       };
     });
   };
@@ -24,8 +24,8 @@ export default class App extends Component {
     return Object.values(this.state).reduce((acc, value) => acc + value, 0);
   };
 
-  countPositiveFeedbackPercentage = (t, g) => {
-    return Math.round((g / t) * 100);
+  countPositiveFeedbackPercentage = (total, good) => {
+    return Math.round((good / total) * 100);
   };
 
   render() {
